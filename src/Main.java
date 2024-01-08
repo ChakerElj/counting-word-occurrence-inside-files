@@ -63,7 +63,7 @@ public class Main {
             Stream<String> linesOfTheText = Files.lines(Path.of(filePath));
             /* Convert a stream of lines to another stream of words of every line using flatMap() then
              we do a groupBy() operation to group by the word next we introduce a new downstream
-             to count the occurrence of any word inside the new stream, and finally we sort the output using reserve order of
+             to count the occurrence of any word inside the new stream, and finally we sort the output using reversed order of
              number of occurrence and print the result*/
             linesOfTheText.flatMap(WORD_BREAK::splitAsStream)
                     .filter(w -> !w.isEmpty()).map(String::toLowerCase).
